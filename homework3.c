@@ -48,7 +48,7 @@ int main(void)
         // YOU MUST WRITE timer1expired IN myTimer.c
         if (timer1Expired())
         {
-            buttonhistory = checkStatus_BoosterpackS1();
+            buttonhistory = (int)checkStatus_BoosterpackS1();
         }
 
 
@@ -120,7 +120,7 @@ bool fsmBoosterpackButtonS1(unsigned int buttonhistory)
     bool pressed = false;
 
     char buttonStatus = checkStatus_BoosterpackS1();
-    unsigned int currentState = buttonStatus;
+    int currentState = (int)buttonStatus;
 
     if (currentState == buttonhistory)
     {
